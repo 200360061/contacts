@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="contacts.AllContactTableViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="62.0" layoutY="40.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="All Contacts">
+               <font>
+                  <Font size="40.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="contactTableView" prefHeight="261.0" prefWidth="779.0">
+              <columns>
+                <TableColumn fx:id="contactID" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="firstName" prefWidth="100.0" text="First Name" />
+                  <TableColumn fx:id="lastName" prefWidth="100.0" text="Last Name" />
+                  <TableColumn fx:id="address" prefWidth="150.0" text="Address" />
+                  <TableColumn fx:id="phoneNumber" prefWidth="120.0" text="Phone" />
+                  <TableColumn fx:id="dateOfBirth" prefWidth="100.0" text="Birthday" />
+                  <TableColumn fx:id="Notes" prefWidth="145.5999755859375" text="Notes" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#createButtonAction" prefWidth="150.0" text="Create New Contact" GridPane.columnIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#editButtonAction" prefWidth="150.0" text="Edit Contact" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#searchButtonAction" prefWidth="150.0" text="Search" GridPane.columnIndex="1" />
+                  <TextField fx:id="searchBar" promptText="Search" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
